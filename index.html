@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saman Ramzan | Portfolio - Graphics Designer & Developer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #0a0a2a;
+            color: #e0e0e0;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1300px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1a1a3e, #0d0d2b);
+            border-radius: 30px;
+            padding: 60px 40px;
+            margin: 30px 0;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+            animation: fadeInDown 1s ease;
+            border: 1px solid #333;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            background: linear-gradient(135deg, #a855f7, #ec4899);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            color: #ccc;
+            margin: 15px 0;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            margin: 10px;
+            background: linear-gradient(135deg, #a855f7, #ec4899);
+            color: white;
+            text-decoration: none;
+            border-radius: 40px;
+            transition: 0.3s;
+            font-weight: bold;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+        }
+
+        .section {
+            background: #11112e;
+            border-radius: 30px;
+            padding: 40px;
+            margin: 30px 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            border: 1px solid #2a2a4a;
+        }
+
+        .section h2 {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            border-left: 5px solid #ec4899;
+            padding-left: 20px;
+            color: #fff;
+        }
+
+        /* Logo Horizontal Scroll / Grid */
+        .logos-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 25px;
+            justify-content: center;
+            align-items: center;
+            margin: 30px 0;
+        }
+
+        .logo-card {
+            background: #1a1a3e;
+            border-radius: 20px;
+            padding: 20px 30px;
+            text-align: center;
+            transition: 0.3s;
+            border: 1px solid #2a2a5a;
+            min-width: 150px;
+        }
+
+        .logo-card i {
+            font-size: 3rem;
+            color: #a855f7;
+        }
+
+        .logo-card:hover {
+            transform: translateY(-5px);
+            border-color: #ec4899;
+        }
+
+        /* Image + Text Side by Side */
+        .project-showcase {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            align-items: center;
+            margin-bottom: 40px;
+            background: #1a1a3e;
+            border-radius: 25px;
+            padding: 25px;
+        }
+
+        .project-img {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .project-img img {
+            width: 100%;
+            border-radius: 20px;
+            border: 2px solid #2a2a5a;
+        }
+
+        .project-info {
+            flex: 1;
+        }
+
+        .project-info h3 {
+            font-size: 1.8rem;
+            color: #a855f7;
+            margin-bottom: 15px;
+        }
+
+        /* Certificates Grid with Images */
+        .certs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+        }
+
+        .cert-card {
+            background: #1a1a3e;
+            border-radius: 20px;
+            overflow: hidden;
+            transition: 0.3s;
+            border: 1px solid #2a2a5a;
+        }
+
+        .cert-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .cert-card .cert-info {
+            padding: 20px;
+        }
+
+        .cert-card h4 {
+            color: #ec4899;
+            margin-bottom: 10px;
+        }
+
+        .cert-card:hover {
+            transform: translateY(-5px);
+            border-color: #a855f7;
+        }
+
+        .skills-badge {
+            display: inline-block;
+            background: #2a2a5a;
+            padding: 8px 16px;
+            margin: 5px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: #1a1a3e;
+            border-radius: 20px;
+            padding: 20px;
+            border: 1px solid #2a2a5a;
+        }
+
+        .card i {
+            font-size: 2.5rem;
+            color: #a855f7;
+            margin-bottom: 15px;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .project-card {
+            background: #1a1a3e;
+            border-radius: 20px;
+            padding: 20px;
+            text-align: center;
+            border: 1px solid #2a2a5a;
+        }
+
+        .project-card a {
+            color: #a855f7;
+            text-decoration: none;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #888;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .project-showcase {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Hero Section -->
+        <div class="hero">
+            <h1>Saman Ramzan</h1>
+            <p><strong>Graphics Designer | Frontend Developer | Entrepreneur | Volunteer Leader</strong></p>
+            <p>Creative, detail-oriented, and passionate about design, leadership, and community impact.</p>
+            <a href="#contact" class="btn">Hire Me</a>
+            <a href="https://drive.google.com/file/d/1bg31fyK-aO8jAno1NOHf4u5FelNWm3iT/view?usp=drivesdk" target="_blank" class="btn">Graphics Portfolio</a>
+            <a href="https://www.linkedin.com/in/saman-ramzan-597a60354" target="_blank" class="btn"><i class="fab fa-linkedin"></i> LinkedIn</a>
+        </div>
+
+        <!-- ===== ORGANIZATIONS LOGOS SECTION ===== -->
+        <div class="section">
+            <h2><i class="fas fa-building"></i> Organizations & Societies</h2>
+            <div class="logos-grid">
+                <div class="logo-card"><i class="fas fa-users"></i><br>CBS</div>
+                <div class="logo-card"><i class="fas fa-user-graduate"></i><br>PMYDC</div>
+                <div class="logo-card"><i class="fas fa-lightbulb"></i><br>CLC</div>
+                <div class="logo-card"><i class="fas fa-hand-holding-heart"></i><br>VFP</div>
+                <div class="logo-card"><i class="fas fa-leaf"></i><br>Go Green</div>
+                <div class="logo-card"><i class="fas fa-heartbeat"></i><br>Heal Pakistan</div>
+            </div>
+        </div>
+
+        <!-- ===== MY DESIGN PROJECTS (WITH IMAGES) ===== -->
+        <div class="section">
+            <h2><i class="fas fa-palette"></i> My Design Projects</h2>
+            
+            <!-- Project 1: Mental Health Week Mela Panaflex -->
+            <div class="project-showcase">
+                <div class="project-img">
+                    <img src="mental-health-mela-panaflex.jpg" alt="Mental Health Week Mela Panaflex Design by Saman Ramzan" onerror="this.src='https://placehold.co/600x400/1a1a3e/a855f7?text=Mental+Health+Week+Mela+2025+Panaflex'">
+                </div>
+                <div class="project-info">
+                    <h3>🧠 Mental Health Week Mela 2025</h3>
+                    <p><strong>Panaflex Design | FJWU CBS Event</strong></p>
+                    <p>"Take care of yourself, Be kind to yourself" – Designed the main panaflex for Mental Health Week Mela organized by Character Building Society, FJWU in collaboration with Counseling & Wellness Center and other partners.</p>
+                    <span class="skills-badge">Canva</span>
+                    <span class="skills-badge">Panaflex Design</span>
+                    <span class="skills-badge">Event Branding</span>
+                </div>
+            </div>
+
+            <!-- Project 2: The River Journey Map -->
+            <div class="project-showcase">
+                <div class="project-img">
+                    <img src="river-journey-map.jpg" alt="The River Journey Map Project" onerror="this.src='https://placehold.co/600x400/1a1a3e/a855f7?text=The+River+Journey+Map'">
+                </div>
+                <div class="project-info">
+                    <h3>⛵ The River Journey Map</h3>
+                    <p><strong>Freelance Project | Leadership & Company Branding</strong></p>
+                    <p>A creative leadership journey map design for Mercedes Martin & Company, featuring leadership archetypes and the concept of "the river within".</p>
+                    <a href="https://github.com/samanramzan34/My-first-project-The-River-Journey-Map-" target="_blank" class="btn" style="padding: 8px 20px; font-size: 0.9rem;">View on GitHub →</a>
+                </div>
+            </div>
+
+            <!-- Project 3: NASAW Logo Design -->
+            <div class="project-showcase">
+                <div class="project-img">
+                    <img src="nasaw-logo.jpg" alt="NASAW Logo Design" onerror="this.src='https://placehold.co/600x400/1a1a3e/a855f7?text=NASAW+Logo+Design'">
+                </div>
+                <div class="project-info">
+                    <h3>🏷️ NASAW Logo Design</h3>
+                    <p><strong>Freelance Project | Organization Brand Identity</strong></p>
+                    <p>Designed a unique brand identity logo for the organization NASAW, focusing on professionalism and cultural relevance.</p>
+                    <a href="https://github.com/samanramzan34/My-first-logo-design-for-organization-named-NASAW-" target="_blank" class="btn" style="padding: 8px 20px; font-size: 0.9rem;">View on GitHub →</a>
+                </div>
+            </div>
+
+            <!-- Project 4: Blossom Bake Bouquet Standee -->
+            <div class="project-showcase">
+                <div class="project-img">
+                    <img src="blossom-bake-standee.jpg" alt="Blossom Bake Bouquet Standee Design" onerror="this.src='https://placehold.co/600x400/1a1a3e/a855f7?text=Blossom+Bake+Bouquet+Standee'">
+                </div>
+                <div class="project-info">
+                    <h3>🌸 Blossom Bake Bouquet</h3>
+                    <p><strong>Standee Design | Bakery Branding</strong></p>
+                    <p>Elegant bakery stall standee with soft watercolor palette, gold-toned cursive typography, and QR code integration for digital connection.</p>
+                    <span class="skills-badge">Standee Design</span>
+                    <span class="skills-badge">Brand Identity</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== CERTIFICATES SECTION WITH IMAGES ===== -->
+        <div class="section">
+            <h2><i class="fas fa-certificate"></i> My Certificates & Achievements</h2>
+            <div class="certs-grid">
+                <div class="cert-card">
+                    <img src="cert-symposium-appreciation.jpg" alt="Certificate of Appreciation - CBS Symposium" onerror="this.src='https://placehold.co/400x250/1a1a3e/ec4899?text=CBS+Symposium+Certificate'">
+                    <div class="cert-info">
+                        <h4>🏅 Certificate of Appreciation</h4>
+                        <p>CBS Symposium - Graphic Designer Role<br>April 29, 2026</p>
+                    </div>
+                </div>
+                <div class="cert-card">
+                    <img src="cert-human-trafficking.jpg" alt="Human Trafficking Awareness Campaign" onerror="this.src='https://placehold.co/400x250/1a1a3e/ec4899?text=Human+Trafficking+Awareness'">
+                    <div class="cert-info">
+                        <h4>📜 Human Trafficking Awareness</h4>
+                        <p>Panel Discussion - PHEC Directive<br>Dec 18, 2025</p>
+                    </div>
+                </div>
+                <div class="cert-card">
+                    <img src="cert-dukhtaran-pakistan.jpg" alt="Dukhtaran-e-Pakistan Seminar" onerror="this.src='https://placehold.co/400x250/1a1a3e/ec4899?text=Dukhtaran-e-Pakistan+Seminar'">
+                    <div class="cert-info">
+                        <h4>🇵🇰 Dukhtaran-e-Pakistan Seminar</h4>
+                        <p>Poster Design Certificate<br>May 26, 2025</p>
+                    </div>
+                </div>
+                <div class="cert-card">
+                    <img src="cert-web-development.jpg" alt="Web Development Certificate" onerror="this.src='https://placehold.co/400x250/1a1a3e/ec4899?text=Web+Development+Certificate'">
+                    <div class="cert-info">
+                        <h4>💻 Web Development Course</h4>
+                        <p>CTTI Rawalpindi - KPK Board</p>
+                    </div>
+                </div>
+                <div class="cert-card">
+                    <img src="cert-cbs-most-active.jpg" alt="Most Active Member CBS" onerror="this.src='https://placehold.co/400x250/1a1a3e/ec4899?text=Most+Active+Member+CBS'">
+                    <div class="cert-info">
+                        <h4>⭐ Most Active Member</h4>
+                        <p>Character Building Society (CBS)</p>
+                    </div>
+                </div>
+                <div class="cert-card">
+                    <img src="cert-chief-graphics.jpg" alt="Chief Graphics Designer CBS" onerror="this.src='https://placehold.co/400x250/1a1a3e/ec4899?text=Chief+Graphics+Designer'">
+                    <div class="cert-info">
+                        <h4>🎨 Chief Graphics Designer</h4>
+                        <p>CBS FJWU - Recognition Certificate</p>
+                    </div>
+                </div>
+            </div>
+            <div style="margin-top: 25px; text-align: center; padding: 15px; background: #1a1a3e; border-radius: 20px;">
+                <p><i class="fas fa-award" style="color: #ec4899;"></i> <strong>Plus:</strong> Recommendation Letter (NextGen Digital), Recommendation Letter (CLC), Flood Relief Drive Certificate, Mental Health Week Mela Certificate, National Integrity Seminar Poster Design, and more.</p>
+            </div>
+        </div>
+
+        <!-- ===== SKILLS SECTION ===== -->
+        <div class="section">
+            <h2><i class="fas fa-code"></i> Skills</h2>
+            <div class="grid-2">
+                <div class="card">
+                    <i class="fas fa-paintbrush"></i>
+                    <h3>Design & Creative</h3>
+                    <span class="skills-badge">Canva</span>
+                    <span class="skills-badge">Logo Designer</span>
+                    <span class="skills-badge">Figma (Basic)</span>
+                    <span class="skills-badge">Panaflex/Standee</span>
+                </div>
+                <div class="card">
+                    <i class="fas fa-laptop-code"></i>
+                    <h3>Technical & Coding</h3>
+                    <span class="skills-badge">HTML/CSS</span>
+                    <span class="skills-badge">C/C++</span>
+                    <span class="skills-badge">Jupyter Notebook</span>
+                    <span class="skills-badge">GUI Tools</span>
+                </div>
+                <div class="card">
+                    <i class="fas fa-chalkboard-user"></i>
+                    <h3>Leadership & Management</h3>
+                    <span class="skills-badge">Team Leadership</span>
+                    <span class="skills-badge">Executive Coordinator</span>
+                    <span class="skills-badge">Entrepreneurship</span>
+                    <span class="skills-badge">Mentoring</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== EDUCATION & EXPERIENCE ===== -->
+        <div class="section">
+            <h2><i class="fas fa-graduation-cap"></i> Education</h2>
+            <ul class="exp-list" style="list-style: none;">
+                <li><i class="fas fa-university" style="color: #ec4899;"></i> <strong>BSCS (2024–2028)</strong> – FJWU Rawalpindi</li>
+                <li><i class="fas fa-chart-line"></i> <strong>Intermediate (ICS) – A Grade</strong> – APS Humayun</li>
+                <li><i class="fas fa-star"></i> <strong>Matriculation (Science) – A+ Grade</strong> – FFS</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2><i class="fas fa-briefcase"></i> Experience</h2>
+            <ul class="exp-list" style="list-style: none;">
+                <li><i class="fas fa-pen-fancy"></i> <strong>Graphic Designer</strong> – FJWU CBS (1 year)</li>
+                <li><i class="fas fa-crown"></i> <strong>Head of Graphics</strong> – PMYDC-FJWU</li>
+                <li><i class="fas fa-chalkboard"></i> <strong>Teacher</strong> – Hussain Academy (1 year)</li>
+                <li><i class="fas fa-handshake"></i> <strong>Creative Designer</strong> – CLC & VFP</li>
+                <li><i class="fas fa-users"></i> <strong>Chief of Graphics</strong> – CBS FJWU (Present)</li>
+            </ul>
+        </div>
+
+        <!-- ===== GITHUB CODING PROJECTS ===== -->
+        <div class="section">
+            <h2><i class="fab fa-github"></i> Coding & Hardware Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card"><i class="fas fa-hospital"></i><h3>Hospital Management</h3><a href="https://github.com/samanramzan34/hospital-management-system/tree/main" target="_blank">View →</a></div>
+                <div class="project-card"><i class="fas fa-vote-yea"></i><h3>Arduino Voting Machine</h3><a href="https://github.com/samanramzan34/Simple-Arduino-Based-Voting-Machine" target="_blank">View →</a></div>
+                <div class="project-card"><i class="fas fa-hotel"></i><h3>Hotel Management</h3><a href="https://github.com/samanramzan34/hotel-management-system" target="_blank">View →</a></div>
+                <div class="project-card"><i class="fas fa-edit"></i><h3>GUI Text Editor</h3><a href="https://github.com/samanramzan34/GUI-based-Text-Editor" target="_blank">View →</a></div>
+            </div>
+        </div>
+
+        <!-- ===== CONTACT ===== -->
+        <div class="section" id="contact">
+            <h2><i class="fas fa-envelope"></i> Contact & Connect</h2>
+            <div class="grid-2">
+                <div class="card">
+                    <i class="fas fa-envelope"></i>
+                    <h3>Email</h3>
+                    <p>samanramzan473@gmail.com</p>
+                    <a href="mailto:samanramzan473@gmail.com" class="btn">Send Email</a>
+                </div>
+                <div class="card">
+                    <i class="fab fa-linkedin"></i>
+                    <h3>LinkedIn</h3>
+                    <a href="https://www.linkedin.com/in/saman-ramzan-597a60354" target="_blank" class="btn">Connect →</a>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>© 2026 Saman Ramzan – Built with <i class="fas fa-heart" style="color: #ec4899;"></i> | Graphics Designer, Developer & Community Leader</p>
+        </footer>
+    </div>
+</body>
+</html>
